@@ -735,7 +735,7 @@ def scale_coords(img1_shape, coords, img0_shape, ratio_pad=None, normalize=False
         discrete_width = round(img0_shape[1] * min_gain)
         discrete_height = round(img0_shape[0] * min_gain)
         gain = discrete_width / img0_shape[1], discrete_height / img0_shape[0]
-        pad = (img1_shape[1] - discrete_width) // 2, (img1_shape[0] - discrete_height) // 2  # wh padding
+        pad = (img1_shape[1] - discrete_width) / 2, (img1_shape[0] - discrete_height) / 2  # wh padding
     else:
         gain = ratio_pad[0]
         pad = ratio_pad[1]
